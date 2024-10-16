@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Área restrita"
+AuthUserFile /etc/httpd/.htpasswd
+Require valid-user

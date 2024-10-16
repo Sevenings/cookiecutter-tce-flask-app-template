@@ -1,0 +1,13 @@
+[Unit]
+Description={{ cookiecutter.project_name }} Service
+
+[Service]
+User=root
+WorkingDirectory=/var/softwaresTCE/{{ cookiecutter.app_name }}
+ExecStart=/var/softwaresTCE/{{ cookiecutter.app_name }}/scripts/run.sh
+EnvironmentFile=/etc/environment
+Restart=always
+RestartSec=9
+
+[Install]
+WantedBy=multi-user.target

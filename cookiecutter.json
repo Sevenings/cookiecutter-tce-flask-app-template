@@ -1,0 +1,11 @@
+{
+    "project_name": "Projeto Flask",
+    "app_name": "{{ cookiecutter.project_name.lower().replace(' ', '').replace('-', '') }}",
+    "project_short_description": "Projeto Flask nos moldes a ser enviado ao servidor da manutenção predial",
+    "version": "1.0.0",
+    "port": "5000",
+    "service_name": "{{ cookiecutter.app_name }}.service",
+    "apache_config_name": "{{ cookiecutter.app_name }}.conf",
+    "git_repo_name": "{{ cookiecutter.app_name }}",
+    "git_repo_owner": "Sevenings"
+}

@@ -1,0 +1,9 @@
+<Directory /var/www/automacao.tce.go.gov.br/{{ cookiecutter.app_name }}>
+    Options Indexes FollowSymLinks
+    AllowOverride AuthConfig
+    Require all granted
+</Directory>
+
+ProxyPass "/{{ cookiecutter.app_name }}/api" "http://127.0.0.1:{{ cookiecutter.port }}/{{ cookiecutter.app_name }}/api"
+
+

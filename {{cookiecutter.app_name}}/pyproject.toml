@@ -1,0 +1,10 @@
+[project]
+name = "{{cookiecutter.app_name}}"
+version = "{{cookiecutter.version}}"
+description = ""
+dependencies = [
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
