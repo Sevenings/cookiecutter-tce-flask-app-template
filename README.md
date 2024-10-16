@@ -1,1 +1,1 @@
-# cookiecutter-templates
+# cookiecutter-flask-app-template
