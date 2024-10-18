@@ -65,6 +65,10 @@ cd $ROOT_BACKEND
 make setup
 cd $dir_atual
 
+# Adiciona permissão de execução ao deploy.sh
+if [ ! -x "$ROOT_BACKEND/scripts/deploy.sh" ]; then
+    sudo chmod +x "$ROOT_BACKEND/scripts/deploy.sh"
+fi
 
 
 # Configuração do Apache
