@@ -75,19 +75,20 @@ if [ -e "./scripts/$APACHE_CONFIG_FILE" ]; then
 fi
 
 
-# Habilita o serviço 
-if [ ! systemctl is-enabled "$SERVICE_NAME" && $AUTO_HABILITAR_SERVICO ]; then
-    echo "[Deploy] Serviço está desabilitado. Habilitando..."
-    sudo systemctl enable "$SERVICE_NAME"
-fi
-
-
 # Copia o serviço para sua pasta
 echo "Instalando o serviço..."
 if [ -e "/usr/lib/systemd/system/$SERVICE_NAME" ]; then   # Antes de copiar, remove o arquivo anterior
     sudo rm "/usr/lib/systemd/system/$SERVICE_NAME"   
 fi
 sudo cp scripts/$SERVICE_NAME /usr/lib/systemd/system/$SERVICE_NAME
+
+
+# Habilita o serviço 
+if ! systemctl is-enabled "$SERVICE_NAME" && [ $AUTO_HABILITAR_SERVICO ]; then
+    echo "[Deploy] Serviço está desabilitado. Habilitando..."
+    sudo systemctl enable "$SERVICE_NAME"
+fi
+
 
 # Ativa o serviço
 echo "Ativando o serviço..."
