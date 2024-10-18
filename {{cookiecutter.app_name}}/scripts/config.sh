@@ -1,3 +1,4 @@
+# Parâmetros gerais
 PROJECT_NAME="{{cookiecutter.app_name}}"
 SERVICE_NAME="{{cookiecutter.service_name}}"
 
@@ -14,3 +15,6 @@ APACHE_CONFIG_DIR="/etc/httpd/conf.d"
 APACHE_CONFIG_FILE="{{ cookiecutter.apache_config_name }}"
 
 HTACCESS_FILE="scripts/htaccess"
+
+# Configurações
+AUTO_HABILITAR_SERVICO=true

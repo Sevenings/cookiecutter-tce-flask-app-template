@@ -1,8 +1,16 @@
 [project]
-name = "{{cookiecutter.app_name}}"
-version = "{{cookiecutter.version}}"
-description = ""
+name = "{{ cookiecutter.app_name }}"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.project_short_description }}"
 dependencies = [
+    "blinker==1.8.2",
+    "click==8.1.7",
+    "Flask==3.0.3",
+    "itsdangerous==2.2.0",
+    "Jinja2==3.1.4",
+    "MarkupSafe==3.0.2",
+    "waitress==3.0.0",
+    "Werkzeug==3.0.4"
 ]
 
 [build-system]
