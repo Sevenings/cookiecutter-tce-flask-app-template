@@ -70,6 +70,16 @@ if [ ! -x "$ROOT_BACKEND/scripts/deploy.sh" ]; then
     sudo chmod +x "$ROOT_BACKEND/scripts/deploy.sh"
 fi
 
+# Adiciona permissão de execução ao run.sh
+if [ ! -x "$ROOT_BACKEND/scripts/run.sh" ]; then
+    sudo chmod +x "$ROOT_BACKEND/scripts/run.sh"
+fi
+
+# Adiciona permissão de execução ao config.sh
+if [ ! -x "$ROOT_BACKEND/scripts/config.sh" ]; then
+    sudo chmod +x "$ROOT_BACKEND/scripts/config.sh"
+fi
+
 
 # Configuração do Apache
 # ------------------------------------
