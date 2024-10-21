@@ -1,5 +1,9 @@
 # Cookiecutter Flask App Template
 
+## Pré-requisitos
+
+Este template foi feito para ser utilizado com o `cookiecutter`: https://github.com/cookiecutter/cookiecutter
+
 ## Modo de uso:
 
 1. Clone o repositório localmente:
