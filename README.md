@@ -1,4 +1,4 @@
-# cookiecutter-flask-app-template
+# Cookiecutter Flask App Template
 
 ## Modo de uso:
 
