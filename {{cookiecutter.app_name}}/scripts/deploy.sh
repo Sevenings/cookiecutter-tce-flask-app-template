@@ -21,14 +21,21 @@ git pull
 # Realizar o Deploy
 # ----------------------------
 
+
+# Frontend
+# ----------------------------
+
 # Copia o frontend para o diretório reconhecido pelo apache.
 echo "[Deploy] Instalando o Frontend..."
-if [ ! -e $ROOT_FRONTEND ]; then
+if [ -e $ROOT_FRONTEND ]; then
     sudo rm -r $ROOT_FRONTEND   # Apaga os arquivos antigos
 fi
 sudo mkdir -p $ROOT_FRONTEND
 sudo cp "app/templates/index.html" $ROOT_FRONTEND"/index.html"
 sudo cp -r "app/static" $ROOT_FRONTEND"/static"
+
+# Htaccess do Apache
+# ----------------------------
 
 # Copia o arquivo htaccess para o diretório do frontend
 if [ -e $HTACCESS_FILE ]; then
@@ -36,7 +43,12 @@ if [ -e $HTACCESS_FILE ]; then
     sudo cp $HTACCESS_FILE $ROOT_FRONTEND"/.htaccess"
 fi
 
-# Se existir, dá um git pull para atualizar os conteudos
+
+
+# Backend
+# ----------------------------
+
+# Se existir a pasta do Backend, dá um git pull para atualizar os conteudos
 if [ -e $ROOT_BACKEND ]; then
     echo "[Deploy] Projeto antigo do backend encontrado, atualizando arquivos..."
 
@@ -88,6 +100,9 @@ if [ -e "./scripts/$APACHE_CONFIG_FILE" ]; then
     sudo cp "./scripts/$APACHE_CONFIG_FILE" "$APACHE_CONFIG_DIR/$APACHE_CONFIG" 
 fi
 
+
+# Serviço 
+# ------------------------------------
 
 # Copia o serviço para sua pasta
 echo "Instalando o serviço..."
